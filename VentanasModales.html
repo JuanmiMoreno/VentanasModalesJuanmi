@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Modales</title>
+    <style>
+        div::first-letter {
+            font-size: 200%;
+            font-weight: bold;
+            font-style: italic;
+
+        }
+
+        div:nth-child(2n+1) {
+            background-color: lightgray;
+        }
+
+        div:nth-child(2n+0) {
+            background-color: white;
+        }
+
+        body {
+            background-color: grey;
+        }
+
+        div p:last-child::after {
+            content: "...";
+        }
+
+        div::after {
+            white-space: pre;
+            content: "\A                       ";
+            height: 36px;
+        }
+
+        p::after {
+            white-space: pre;
+            content: "\A                       ";
+            height: 12px;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        .contenido {
+          
+            width: 400px;
+            padding: 10px 20px;
+            margin: 20% auto;
+            position: relative;
+            opacity: 1;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            pointer-events: none;
+            
+        }
+
+        #informacion:target {
+            opacity: 0.92;
+            pointer-events: auto;
+        }
+
+        /*Le damos estilo al boton creado*/
+        .boton {
+            text-decoration: none;
+            padding: 5px;
+            font-weight: 50;
+            font-size: 14px;
+            color: #ffffff;
+            background-color: #1883ba;
+            border-radius: 6px;
+            border: 2px solid #0016b0;
+        }
+
+        /*Cambiamos los colores del boton cuando el raton este encima*/
+        .boton:hover {
+            color: #1883ba;
+            background-color: #ffffff;
+        }
+
+        /*Damos una altura y anchura a la foto y la centramos*/
+        #foto {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            justify-content: center;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <p>Soldadito marinero</p>
+
+    <div>
+        <p>Él camina despacito que las prisas no son buenas</p>
+        <p>En su brazo dobladita, con cuidado la chaqueta</p>
+        <p>Luego pasa por la calle dónde los chavales juegan</p>
+        <p>Él también quiso ser niño pero le pilló la guerra</p>
+    </div>
+
+    <div>
+        <p>Soldadito marinero conociste a una sirena</p>
+        <p>De esas que dicen te quiero si ven la cartera llena</p>
+        <p>Escogiste a la más guapa y a la menos buena</p>
+        <p>Sin saber como ha venido te ha cogido la tormenta</p>
+    </div>
+
+    <div>
+        <p>Él quería cruzar los mares y olvidar a su sirena</p>
+        <p>La verdad, no fue difícil cuando conoció a Mariela</p>
+        <p>Que tenía los ojos verdes y un negocio entre las piernas</p>
+        <p>Hay que ver que puntería, no te arrimas a una buena</p>
+    </div>
+    <div>
+        <p>Soldadito marinero conociste a una sirena</p>
+        <p>De esas que dicen te quiero si ven la cartera llena</p>
+        <p>Escogiste la más guapa y a la menos buena</p>
+        <p>Sin saber como ha venido te ha cogido la tormenta</p>
+    </div>
+    <div>
+        <p>Después de un invierno malo, una mala primavera</p>
+        <p>Dime por que estas buscando una lágrima en la arena</p>
+        <p>Después de un invierno malo</p>
+    </div>
+    <br>
+    <!--Aqui creamos el boton que habra en la pantalla principal-->
+    <a class="boton" href="#informacion">+ informacion</a>
+    <div id="informacion" class="modal">
+        <!--Este sera el contenido que tendra cuando se habra la ventana modal-->
+        <div class="contenido">
+            <!--Boton para volver a la pantalla principal-->
+            <a class="boton" href="#">⇦ Volver</a>
+            <br>
+            <img id="foto" src="./fito.jpg">
+            <p>AUTOR: Fito y los Fitipaldis</p>
+            <a href="https://www.letras.com/fito-fitipaldis/614056/">FUENTE:
+                https://www.letras.com/fito-fitipaldis/614056/</a>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
